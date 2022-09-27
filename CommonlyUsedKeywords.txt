@@ -4,3 +4,12 @@ Library           SeleniumLibrary
 *** Variables ***
 ${Username}       ${EMPTY}
 ${Password}       ${EMPTY}
+${Sheetname}      ${EMPTY}
+
+*** Keywords ***
+Read Data From Master Sheet
+    [Arguments]    ${Sheetname}    ${TC_Name}    ${Columnname}
+    ${Data}    Excel_read.Read Mastersheet    ${Sheetname}
+    log    ${Data}
+    ${Value}    Excel_read.Run Test Case    ${Data}    ${TC_Name}    ${Columnname}
+    [Return]    ${Value}
