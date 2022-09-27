@@ -1,0 +1,10 @@
+pwd
+ls -al
+cd ./Src
+pwd
+ls -al
+mkdir ../reports
+source /var/lib/jenkins/venv/bin/activate
+robot -t InternalReturns_Automation_NPrinting --outputdir ../reports Qliksensetest.robot
+
+exit 0
